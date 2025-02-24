@@ -27,7 +27,7 @@ findfont = "0.1"
 Basic usage:
 
 ```rust
-use findfont_rs::find;
+use findfont::find;
 
 fn main() {
     if let Some(path) = find("Arial") {
@@ -41,7 +41,7 @@ fn main() {
 With error handling:
 
 ```rust
-use findfont_rs::find;
+use findfont::find;
 
 fn load_font(font_name: &str) -> std::io::Result<Vec<u8>> {
     find(font_name)
