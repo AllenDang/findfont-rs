@@ -10,6 +10,6 @@ homepage = "https://github.com/AllenDang/findfont-rs"
 repository = "https://github.com/AllenDang/findfont-rs"
 keywords = ["font"]
 exclude = ["/.github", ".gitignore"]
-rust-version = "1.83.0"
+rust-version = "1.85.0"
 
 [dependencies]
