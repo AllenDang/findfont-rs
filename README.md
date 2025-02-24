@@ -1,7 +1,7 @@
 # findfont-rs
 
-[![Crates.io](https://img.shields.io/crates/v/findfont-rs)](https://crates.io/crates/findfont-rs)
-[![Docs.rs](https://img.shields.io/docsrs/findfont-rs)](https://docs.rs/findfont-rs)
+[![Crates.io](https://img.shields.io/crates/v/findfont-rs)](https://crates.io/crates/findfont)
+[![Docs.rs](https://img.shields.io/docsrs/findfont-rs)](https://docs.rs/findfont)
 
 A cross-platform Rust library to find font files in system font directories.
 
@@ -19,7 +19,7 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-findfont-rs = "0.1"
+findfont = "0.1"
 ```
 
 ## Usage
