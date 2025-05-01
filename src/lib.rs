@@ -1,6 +1,4 @@
-mod findfont;
-
-pub use findfont::find;
+pub mod findfont;
 
 #[cfg(test)]
 mod tests {
