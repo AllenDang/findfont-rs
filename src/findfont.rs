@@ -42,7 +42,7 @@ fn get_linux_sys_font_dirs() -> Vec<PathBuf> {
     font_dirs
 }
 
-fn get_sys_font_dirs() -> Vec<PathBuf> {
+pub fn get_sys_font_dirs() -> Vec<PathBuf> {
     #[cfg(target_os = "macos")]
     let dirs = vec![
         PathBuf::from("~/Library/Fonts/"),
