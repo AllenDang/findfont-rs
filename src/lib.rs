@@ -1,4 +1,7 @@
-pub mod findfont;
+mod findfont;
+
+pub use findfont::find;
+pub use findfont::get_sys_font_dirs;
 
 #[cfg(test)]
 mod tests {
