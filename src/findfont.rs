@@ -86,7 +86,7 @@ pub fn get_sys_font_dirs() -> Vec<PathBuf> {
 /// assert!(dir.is_some(), "Seems like your system is not supported or it does not have known font directory :(");
 /// ```
 /// 
-pub fn get_sys_font_dir<'a>() -> Option<PathBuf> {
+pub fn get_sys_font_dir() -> Option<PathBuf> {
     get_sys_font_dirs().iter()
     .filter(|path| std::path::Path::new(path).exists())
     .map(|path| -> PathBuf { path.clone() })
