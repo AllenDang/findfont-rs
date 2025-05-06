@@ -42,7 +42,16 @@ fn get_linux_sys_font_dirs() -> Vec<PathBuf> {
     font_dirs
 }
 
-fn get_sys_font_dirs() -> Vec<PathBuf> {
+///
+/// Will return all font sys directories that are known for the current platform
+/// 
+/// # Examples
+/// ```
+/// let dirs = findfont::get_sys_font_dirs();
+/// 
+/// assert!(dirs.len() > 0, "Seems like your system is not supported or it does not have known font directories :(");
+/// ```
+pub fn get_sys_font_dirs() -> Vec<PathBuf> {
     #[cfg(target_os = "macos")]
     let dirs = vec![
         PathBuf::from("~/Library/Fonts/"),
@@ -67,6 +76,35 @@ fn get_sys_font_dirs() -> Vec<PathBuf> {
     dirs
 }
 
+///
+/// Will return the first font sys directory that exists
+/// 
+/// # Examples
+/// ```
+/// let dir = findfont::get_sys_font_dir();
+/// 
+/// assert!(dir.is_some(), "Seems like your system is not supported or it does not have known font directory :(");
+/// ```
+/// 
+pub fn get_sys_font_dir() -> Option<PathBuf> {
+    get_sys_font_dirs().iter()
+    .filter(|path| std::path::Path::new(path).exists())
+    .map(|path| -> PathBuf { path.clone() })
+    .next()
+}
+
+///
+/// Will return the path to the requested font in system font directories (font file included).
+/// None will be returned in case the font is not found
+/// 
+/// # Examples
+/// ```
+/// let font_name = "Arial";
+/// let font = findfont::find(font_name);
+/// 
+/// assert!(font.is_some());
+/// ```
+/// 
 pub fn find(font_name: &str) -> Option<PathBuf> {
     let exts = ["ttf", "ttc", "otf"];
     let variant = ["Light", "Medium"];
