@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2](https://github.com/AllenDang/findfont-rs/compare/v0.1.1...v0.1.2) - 2025-05-06
+
+### Other
+
+- ...
+- exposing more of the API and adding brief comments with examples
+- Update lib.rs
+- Update lib.rs
+- Update findfont.rs
+
 ## [0.1.1](https://github.com/AllenDang/findfont-rs/compare/v0.1.0...v0.1.1) - 2025-02-24
 
 ### Other
