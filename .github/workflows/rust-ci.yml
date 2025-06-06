@@ -1,0 +1,29 @@
+name: Rust build and test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install DejaVu Fonts (Ubuntu only)
+        if: runner.os == 'Linux'
+        run: sudo apt-get install -y fonts-dejavu
+
+      - name: Build
+        run: cargo build --verbose
+      - name: Run tests
+        run: cargo test --verbose
+      - name: Run clippy (lint)
+        run: cargo clippy -- -D clippy:all
+      - name: Check formatting
+        run: cargo fmt --all -- --check
