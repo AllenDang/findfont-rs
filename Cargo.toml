@@ -13,3 +13,4 @@ exclude = ["/.github", ".gitignore"]
 rust-version = "1.85.0"
 
 [dependencies]
+dirs = "6.0"
